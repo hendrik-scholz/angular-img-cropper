@@ -2,6 +2,7 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
     return {
         scope: {
             image: "=",
+            imageDimensions: "=",
             croppedImage: "=",
             croppedImageFull: "=",
             cropWidth: "=",
@@ -876,6 +877,12 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
                         this.fileType = fileType;
                     }
                     this.srcImage = img;
+                    
+                    if(scope.imageDimensions) {
+                    	scope.imageDimensions.width = img.width;
+                    	scope.imageDimensions.height = img.height;
+                    }
+                    
                     this.updateClampBounds();
                     var sourceAspect = this.srcImage.height / this.srcImage.width;
                     var cropBounds = this.getBounds();
