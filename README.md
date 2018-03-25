@@ -31,7 +31,7 @@ bower install angular-img-cropper
 
 ### Add dependency
 
-Add the image cropper module as a dependancy to your application module:
+Add the image cropper module as a dependency to your application module:
 ```javascript
 angular.module('myApp', ['angular-img-cropper']);
 ```
@@ -44,6 +44,7 @@ angular.module('myApp', ['angular-img-cropper']);
 | crop-width  | The width of the crop area|
 | crop-height | The height of the crop area|
 | image | The source image to crop|
+| file-size-in-bytes (*optional*) | The estimated file size of the source image|
 | cropped-image (*optional*) | The cropped image|
 | keep-aspect   | Enforces that the aspect ratio is kept when dragging the crop area. The aspect ratio is defined by the width and height paramater. |
 | touch-radius  | The radius for detecting touches/clicks on the corner drag markers and the centre drag marker. |
@@ -75,6 +76,7 @@ angular.module('myApp', ['angular-img-cropper']);
         $scope.bounds.right = 0;
         $scope.bounds.top = 0;
         $scope.bounds.bottom = 0;
+        $scope.fileSizeInBytes = 0;
     }]);
 </script>
 <meta charset="utf-8">
@@ -82,10 +84,11 @@ angular.module('myApp', ['angular-img-cropper']);
 </head>
 <body ng-app="myApp">
     <div ng-controller="ImageCropperCtrl as ctrl">
-        <input type="file" img-cropper-fileread image="cropper.sourceImage" />
+        <input type="file" img-cropper-fileread image="cropper.sourceImage" file-size-in-bytes="fileSizeInBytes"/>
         <div>
              <canvas width="500" height="300" id="canvas" image-cropper image="cropper.sourceImage" cropped-image="cropper.croppedImage" crop-width="400" crop-height="200" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
         </div>
+        <div>Image (File Size: {{fileSizeInBytes}} Bytes)</div>
         <div>Cropped Image (Left: {{bounds.left}} Right: {{bounds.right}} Top: {{bounds.top}} Bottom: {{bounds.bottom}})</div>
         <div ng-show="cropper.croppedImage!=null"><img ng-src="{{cropper.croppedImage}}" /></div>
     </div>

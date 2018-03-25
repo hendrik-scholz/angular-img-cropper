@@ -1312,9 +1312,12 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
 }]);
 
 angular.module('angular-img-cropper').directive("imgCropperFileread", ['$timeout', function ($timeout) {
+	const BASE64_STRING_LENGTH_TO_FILE_SIZE_FACTOR = 6/8;
+	
     return {
         scope: {
-            image: "="
+            image: "=",
+            fileSizeInBytes: "="
         },
         link: function (scope, element) {
             element.bind("change", function (changeEvent) {
@@ -1322,6 +1325,10 @@ angular.module('angular-img-cropper').directive("imgCropperFileread", ['$timeout
                 reader.onload = function (loadEvent) {
                     $timeout(function () {
                         scope.image = loadEvent.target.result;
+                        
+                        if(scope.fileSizeInBytes !== undefined) {
+                        	scope.fileSizeInBytes = Math.ceil(BASE64_STRING_LENGTH_TO_FILE_SIZE_FACTOR * scope.image.length);
+                    	}
                     }, 0);
                 };
                 if (changeEvent.target.files[0]) {
