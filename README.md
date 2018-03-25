@@ -6,10 +6,6 @@ An image cropping tool for AngularJS. Features a rectangular crop area. The crop
 
 ![Screenshot](https://raw.githubusercontent.com/AllanBishop/ImageCropper/master/screenshots/screenshot.jpg "Screenshot")
 
-## Live demo
-
-[Live demo on JSBin](http://jsbin.com/fukeqe/9/)
-
 ## Requirements
 
  - Modern Browser supporting ```<canvas>```
@@ -18,7 +14,7 @@ An image cropping tool for AngularJS. Features a rectangular crop area. The crop
 
 ### Download
 
-- [Download angular-img-cropper](https://github.com/AllanBishop/angular-img-cropper/archive/master.zip) files from GitHub.
+- [Download angular-img-cropper](https://github.com/hendrik-scholz/angular-img-cropper/archive/dev.zip) files from GitHub.
 
 Or
 
