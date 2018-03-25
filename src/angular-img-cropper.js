@@ -1170,7 +1170,8 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
                             didDraw = didDraw || this.drawCornerCursor(this.markers[i], cropTouch.x, cropTouch.y, e);
                         }
                         if (!didDraw) {
-                            imageCropperDataShare.setStyle(this.canvas, 'initial');
+                        	//https://github.com/AllanBishop/angular-img-cropper/pull/64/commits/0afd1882da98f8fa9ca5a018b6f1f19572a8aa48
+                    		imageCropperDataShare.setStyle(this.canvas, 'default');
                         }
                     }
                     if (!didDraw && !cursorDrawn && this.center.touchInBounds(cropTouch.x, cropTouch.y)) {
