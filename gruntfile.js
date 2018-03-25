@@ -11,25 +11,10 @@ module.exports = function (grunt) {
           'dist/<%= pkg.name %>.min.js': ['src/angular-img-cropper.js']
         }
       }
-    },
-    copy: {
-      source: {
-        cwd: 'src',
-        src: [ 'angular-img-cropper.js' ],
-        dest: 'src',
-        expand: true
-      },
-      test: {
-        cwd: 'src',
-        src: [ '*.js' ],
-        dest: 'test',
-        expand: true
-      },
-    },
-
+    }
   });
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.registerTask('default', ['uglify','copy']);
+  grunt.registerTask('build', ['uglify']);
 };
