@@ -49,6 +49,7 @@ angular.module('myApp', ['angular-img-cropper']);
 | min-width (*optional*) | The minimum width that the crop area can be set to.
 | min-height (*optional*) | The minimum height that the crop area can be set to.
 | cors (*optional*) |  Allows images loaded from foreign origins to be used in canvas as if they were being loaded from the current origin ([MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_enabled_image)). *Default: no*
+| cropper-color (*optional*) | Color of cropper boundaries ([accepted color values](http://www.w3schools.com/cssref/css_colors_legal.asp)). *Default: 'rgba(255,228,0,1)'*
 
 ## Example usage
 
@@ -86,7 +87,7 @@ angular.module('myApp', ['angular-img-cropper']);
     <div ng-controller="ImageCropperCtrl as ctrl">
         <input type="file" img-cropper-fileread image="cropper.sourceImage" file-size-in-bytes="fileSizeInBytes"/>
         <div>
-             <canvas width="500" height="300" id="canvas" image-cropper image="cropper.sourceImage" image-dimensions="dimensions" cropped-image="cropper.croppedImage" crop-width="400" crop-height="200" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds"></canvas>
+             <canvas width="500" height="300" id="canvas" image-cropper image="cropper.sourceImage" image-dimensions="dimensions" cropped-image="cropper.croppedImage" crop-width="400" crop-height="200" keep-aspect="true" touch-radius="30" crop-area-bounds="bounds" cropper-color="#CCB600"></canvas>
         </div>
         <div>Image (File Size: {{fileSizeInBytes}} Bytes Width: {{dimensions.width}} Height: {{dimensions.height}})</div>
         <div>Cropped Image (Left: {{bounds.left}} Right: {{bounds.right}} Top: {{bounds.top}} Bottom: {{bounds.bottom}})</div>
