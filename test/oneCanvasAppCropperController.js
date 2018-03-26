@@ -1,6 +1,5 @@
-angular.module('app').controller("ImageCropperCtrl",[ '$scope', function($scope) 
+angular.module('oneCanvasApp').controller("ImageCropperCtrl",[ '$scope', function($scope) 
 {
-        $scope.bounds = {};
         $scope.cropper = {};
         $scope.cropper.sourceImage = null;
         $scope.cropper.croppedImage = null;

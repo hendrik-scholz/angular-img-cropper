@@ -1,0 +1,1 @@
+angular.module('oneCanvasApp', ['angular-img-cropper']);
