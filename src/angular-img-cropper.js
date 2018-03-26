@@ -1326,7 +1326,7 @@ angular.module('angular-img-cropper', []).directive("imageCropper", ['$document'
 }]);
 
 angular.module('angular-img-cropper').directive("imgCropperFileread", ['$timeout', function ($timeout) {
-	const BASE64_STRING_LENGTH_TO_FILE_SIZE_FACTOR = 6/8;
+	var BASE64_STRING_LENGTH_TO_FILE_SIZE_FACTOR = 6/8;
 	
     return {
         scope: {
