@@ -1,0 +1,1 @@
+angular.module('squareCanvasApp', ['angular-img-cropper']);
