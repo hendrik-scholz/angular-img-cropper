@@ -12,19 +12,9 @@ An image cropping tool for AngularJS. Features a rectangular crop area. The crop
 
 ## Installing
 
-### Download
-
-- [Download angular-img-cropper](https://github.com/hendrik-scholz/angular-img-cropper/archive/dev.zip) files from GitHub.
-
-Or
-
-- Install with Bower
-
 ```javascript
-bower install angular-img-cropper
+bower install https://github.com/hendrik-scholz/angular-img-cropper/archive/master.zip
 ```
-
-
 ### Add dependency
 
 Add the image cropper module as a dependency to your application module:
